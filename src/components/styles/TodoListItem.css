@@ -1,0 +1,79 @@
+.todoListItem {
+    padding: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(24, 23, 23, 0.616);
+    min-width: 100px;
+    max-width: 30vw;
+    min-height: 100px;
+    /* overflow-x: hidden; */
+    /* border: solid 0.5px rgba(85, 85, 85, 0.63); */
+    word-wrap: break-word;
+    background: rgba(4, 0, 0, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin-right: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* .createTodoButton {
+    margin: 25px;
+    padding: 15px;
+    background-color: #343350f6;
+    border: solid 1px grey;
+    border-radius: 30rem;
+    /* font-size: 18px; */
+  /* font-weight: lighter; */
+  /* font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; */
+  /* color: white;
+  } */
+  .todoList {
+    display: flex;
+    /* justify-content: space-around; */
+    padding-top: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .todoListItems {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .newTodoForm {
+    padding: 10px;
+    font-size: 20px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .newTodoForm .MuiOutlinedInput-root {
+    font-size: 20px;
+    color: white;
+    min-width: 30vw;
+  }
+  
+  .newTodoForm .MuiOutlinedInput-root fieldset {
+    border: solid 1px gray;
+  }
+  .newTodoForm .MuiInputBase-root {
+    color: white;
+  }
+  .newTodoForm .MuiFormLabel-root {
+    color: white;
+  }
+  
+  .todoButton {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    flex: 0 1 auto;
+    align-self: stretch;
+    /* background-color: red; */
+  }
+  

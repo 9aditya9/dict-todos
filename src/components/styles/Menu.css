@@ -1,0 +1,42 @@
+/* .Mui-selected {
+  color: wheat;
+  background-color: #343343;
+  #22222269
+
+  border: none;
+} */
+
+.tabs {
+    color: white;
+    padding: 5px;
+    text-align: center;
+  
+    /* background-color: red; */
+    /* flex-grow: 1; */
+    /* width: 100%; */
+    justify-content: space-between;
+  }
+  .tabs .Mui-selected {
+    background-color: #343350f6;
+    border: none;
+  }
+  .tabButton {
+    /* margin-right: 25px; */
+    background-color: #22222269;
+    border: solid 1px gray;
+    color: white;
+    border-radius: 30rem;
+  }
+  .tabPanel {
+    color: white;
+    background-color: black;
+  }
+  
+  /* .menuContainer {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-grow: 1;
+  } */
+  

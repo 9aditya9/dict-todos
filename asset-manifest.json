@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/dict-todos/static/css/main.de746509.chunk.css",
+    "main.js": "/dict-todos/static/js/main.d71775bc.chunk.js",
+    "main.js.map": "/dict-todos/static/js/main.d71775bc.chunk.js.map",
+    "runtime-main.js": "/dict-todos/static/js/runtime-main.40ed506b.js",
+    "runtime-main.js.map": "/dict-todos/static/js/runtime-main.40ed506b.js.map",
+    "static/js/2.ffef4fde.chunk.js": "/dict-todos/static/js/2.ffef4fde.chunk.js",
+    "static/js/2.ffef4fde.chunk.js.map": "/dict-todos/static/js/2.ffef4fde.chunk.js.map",
+    "index.html": "/dict-todos/index.html",
+    "static/css/main.de746509.chunk.css.map": "/dict-todos/static/css/main.de746509.chunk.css.map",
+    "static/js/2.ffef4fde.chunk.js.LICENSE.txt": "/dict-todos/static/js/2.ffef4fde.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.40ed506b.js",
+    "static/js/2.ffef4fde.chunk.js",
+    "static/css/main.de746509.chunk.css",
+    "static/js/main.d71775bc.chunk.js"
+  ]
+}

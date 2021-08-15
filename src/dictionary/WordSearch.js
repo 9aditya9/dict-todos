@@ -1,17 +1,15 @@
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import { TextField } from "@material-ui/core";
 import "../components/styles/TodoListItem.css";
-import axios from "axios";
-import { WordSummary } from "./WordSummary";
-// import DictTable from "./DicTable";
+import WordSummary from "./WordSummary";
+import { connect } from "react-redux";
+import { loadWords } from '../thunks/thunks'
 
-const WordSearch = () => {
+const WordSearch = ({ isLoading, startLoadingWords }) => {
     const [searched, setSearched] = useState("");
-    const [wordData, setWordData] = useState([]);
-    const url = "https://api.dictionaryapi.dev/api/v2/entries/en_US/";
     const [timer, setTimer] = useState("");
     const handleSearched = (event) => {
-        // console.log(searched + "and" + event.target.value);
         setSearched(event.target.value);
     };
 
@@ -23,28 +21,21 @@ const WordSearch = () => {
         };
     };
 
-    const handleApiCall = async () => {
-        const request = axios.get(url + searched);
-        await request
-            .then((res) => {
-                // console.log(res.data);
-                setWordData(res.data);
-            })
-            .catch((error) => {
-                alert("O o you typed an incorrect word!" + error.message);
-            });
-        // data.then(data => setStatus(data.status))
-        // console.log(data);
-        // return setWordData(data);
-    };
+    const handleLoadWords = () => {
+        startLoadingWords(searched);
+    }
 
-    const handleDebounce = debounce(handleApiCall);
+    const handleDebounce = debounce(handleLoadWords);
 
     useEffect(() => {
         if (searched !== "") {
             handleDebounce();
         }
     }, [searched]);
+
+    const loadingMessage = <div style={{ backgroundColor: "white", width: "100%", height: '50vh', textAlign: "center", fontSize: '20px', alignItems: 'center' }}>Loading word data ...</div>
+
+
     return (
         <>
             <div className="newTodoForm">
@@ -56,13 +47,19 @@ const WordSearch = () => {
                     onChange={(event) => handleSearched(event)}
                 />
             </div>
-            {wordData.length > 0 ? (
-                <WordSummary word={wordData[0]} />
-                // console.log(wordData)
-            ) : // console.log("no data")
-                null}
+            {
+                isLoading ? loadingMessage : <WordSummary />
+            }
         </>
     );
 };
 
-export default WordSearch;
+const mapStateToProps = (state) => ({
+    isLoading: state.isLoading,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    startLoadingWords: (text) => dispatch(loadWords(text)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(WordSearch);

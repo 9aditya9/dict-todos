@@ -1,8 +1,44 @@
 import {
   CREATE_TODO,
   MARK_TODO_AS_COMPLETED,
-  DELETE_TODO
+  DELETE_TODO,
+  LOAD_WORD_SUCCESS,
+  LOAD_WORD_FAILURE,
+  LOAD_WORD_IN_PROGRESS,
 } from "../actions/todosActions";
+
+export const words = (state, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case LOAD_WORD_SUCCESS: {
+      const { wordData } = payload;
+      return wordData;
+    }
+    case LOAD_WORD_IN_PROGRESS:
+    case LOAD_WORD_FAILURE:
+    default: {
+      return null;
+    }
+  }
+}
+
+
+export const isLoading = (state = false, action) => {
+  const { type } = action;
+  switch (type) {
+    case LOAD_WORD_IN_PROGRESS: {
+      return true;
+    }
+    case LOAD_WORD_SUCCESS:
+    case LOAD_WORD_FAILURE: {
+      return false;
+    }
+    default: {
+      return state;
+    }
+  }
+};
+
 
 export const todos = (
   state = [

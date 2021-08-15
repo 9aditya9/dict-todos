@@ -15,3 +15,26 @@ export const deleteTodo = (text) => ({
   type: DELETE_TODO,
   payload: { text }
 });
+
+export const SEARCHED_WORD = "SEARCHED_WORD";
+export const searchWord = (text) => ({
+  type: SEARCHED_WORD,
+  payload: { text }
+});
+
+export const LOAD_WORD_IN_PROGRESS = "LOAD_WORD_IN_PROGRESS";
+export const loadWordInProgress = () => ({
+  type: LOAD_WORD_IN_PROGRESS,
+  // payload: { text }
+});
+
+export const LOAD_WORD_SUCCESS = "LOAD_WORD_SUCCESS";
+export const loadWordSuccess = wordData => ({
+  type: LOAD_WORD_SUCCESS,
+  payload: { wordData }
+});
+
+export const LOAD_WORD_FAILURE = "LOAD_WORD_FAILURE";
+export const loadWordFailure = () => ({
+  type: LOAD_WORD_FAILURE,
+});
